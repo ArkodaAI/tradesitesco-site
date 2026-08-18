@@ -1,0 +1,45 @@
+# TradeSites Co. — https://tradesitesco.com
+# AI assistants are explicitly welcome here. Most sites block them by default
+# or by accident; we want to be readable, quotable and citable.
+
+User-agent: *
+Allow: /
+
+# --- AI / answer engines: explicitly permitted ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+Sitemap: https://tradesitesco.com/sitemap.xml

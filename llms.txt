@@ -1,0 +1,54 @@
+# TradeSites Co.
+
+> Website design and build for trade and home-service businesses in the United States.
+> One flat price of $499, delivered in five business days. The finished site is shown
+> to the customer before any payment is taken.
+
+## What we do
+
+TradeSites Co. builds complete, mobile-first websites for plumbers, HVAC contractors,
+electricians, roofers, landscapers, painters, concrete contractors, cleaners, pest
+control, tree services, towing companies and general handymen.
+
+## Pricing
+
+- **Website: $499, one time.** Not a subscription. Includes up to five pages, all
+  copywriting, mobile-first design, tap-to-call, a quote request form, live Google
+  reviews, structured data for AI and search visibility, Google setup, and the first
+  year of hosting.
+- **Care Plan: $29/month, optional.** Hosting, SSL, daily backups, unlimited small
+  edits, the Instant Answer Assistant, and monthly reporting. No contract. Never required.
+- Add-ons, each priced publicly on the site: extra page $49, online booking $149,
+  Instant Answer Assistant $99, before/after gallery $99, Google Business Profile
+  setup $79, logo design $129, online payments $149, extra service-area page $39,
+  rush 48-hour delivery $149.
+
+## How it works
+
+1. The customer answers six questions by email. About ten minutes. No phone calls.
+2. TradeSites Co. builds the entire site. Five business days.
+3. The customer reviews a private preview link and requests changes.
+4. The customer pays $499 only if they want to keep it. Otherwise they owe nothing.
+
+## What makes us different
+
+- No payment is taken before the customer sees the finished website.
+- No required monthly fee, and the customer owns the domain and the site outright.
+- No sales calls, meetings or discovery sessions.
+- Every site is built to be readable by AI assistants: schema.org structured data,
+  plain-language question-and-answer content, an llms.txt file, and a robots.txt
+  that explicitly permits AI crawlers.
+- We do not publish testimonials, review counts or client numbers we have not earned.
+  We are a new company and say so plainly on our site.
+
+## Honest limitations
+
+- We cannot guarantee a Google ranking or that any AI assistant will recommend a
+  customer's business. We build the technical foundation that makes it possible.
+- The strongest local ranking factor is a Google Business Profile, which we offer to
+  set up for $79 but which is separate from the website itself.
+
+## Contact
+
+Email: info@tradesitesco.com
+Website: https://tradesitesco.com

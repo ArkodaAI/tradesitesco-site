@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Vance &amp; Sons Plumbing — Demo Site by TradeSites Co.</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --navy:#0b2545; --navy2:#13315c; --blue:#1c6dd0; --blue-lt:#e8f1fc;
+    --ink:#12202f; --mut:#5b6b7c; --line:#dde5ee; --bg:#fff; --warm:#ff8a1f;
+  }
+  html{scroll-behavior:smooth}
+  body{font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  .demobar{background:#111;color:#fff;text-align:center;font-size:13px;padding:8px 14px;letter-spacing:.02em}
+  .demobar b{color:var(--warm)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;gap:18px;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--navy)}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--navy));display:grid;place-items:center;color:#fff;font-size:17px}
+  .nav nav{margin-left:auto;display:flex;gap:22px;font-size:14.5px;font-weight:600;color:var(--mut)}
+  .nav nav a{text-decoration:none}
+  .nav nav a:hover{color:var(--blue)}
+  .callbtn{background:var(--blue);color:#fff;text-decoration:none;font-weight:800;padding:11px 18px;border-radius:9px;font-size:15px;white-space:nowrap;box-shadow:0 2px 0 #12559f}
+  @media(max-width:820px){.nav nav{display:none}.nav{gap:10px}.callbtn{margin-left:auto}}
+  @media(max-width:400px){.logo{font-size:16.5px}.logo .mark{width:30px;height:30px;font-size:15px}.callbtn{padding:9px 12px;font-size:13.5px}.nav{height:62px;gap:8px}.wrap{padding:0 13px}}
+
+  .hero{background:linear-gradient(100deg,rgba(11,37,69,.96) 0%,rgba(19,49,92,.90) 42%,rgba(26,66,120,.62) 100%),url('../img/plumber-hero.jpg') center/cover no-repeat,var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(28,109,208,.55),transparent 65%)}
+  .hero .wrap{position:relative;z-index:2;padding:70px 20px 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  @media(max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:52px 20px 48px}}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:6px 13px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+  h1{font-size:clamp(31px,5vw,50px);line-height:1.08;letter-spacing:-.025em;margin:18px 0 16px;font-weight:800}
+  .hero p{font-size:18px;color:#c6d8ef;max-width:46ch}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-block;text-decoration:none;font-weight:800;padding:15px 26px;border-radius:10px;font-size:16.5px}
+  .btn-p{background:var(--warm);color:#1a1005;box-shadow:0 3px 0 #c9660d}
+  .btn-s{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .trustrow{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;font-size:14px;color:#9fbde0;font-weight:600}
+  .trustrow span{display:flex;align-items:center;gap:7px}
+  .tick{width:17px;height:17px;border-radius:50%;background:#2f8f4e;display:grid;place-items:center;color:#fff;font-size:11px;flex:none}
+
+  .quotecard{background:#fff;color:var(--ink);border-radius:14px;padding:26px;box-shadow:0 20px 50px rgba(3,20,45,.35)}
+  .quotecard h3{font-size:20px;letter-spacing:-.01em}
+  .quotecard p.sub{font-size:14px;color:var(--mut);margin:6px 0 16px}
+  .field{margin-bottom:11px}
+  .field label{display:block;font-size:12.5px;font-weight:700;color:var(--mut);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+  .field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;font:inherit;font-size:15px;background:#fbfcfe}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+  .submit{width:100%;background:var(--blue);color:#fff;border:0;padding:14px;border-radius:9px;font:inherit;font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 3px 0 #12559f}
+  .fineprint{font-size:12px;color:var(--mut);text-align:center;margin-top:10px}
+
+  section{padding:66px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 42px}
+  .sec-head .kicker{font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--blue)}
+  .sec-head h2{font-size:clamp(26px,3.6vw,36px);letter-spacing:-.02em;margin:9px 0 12px;font-weight:800}
+  .sec-head p{color:var(--mut);font-size:17px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.grid3{grid-template-columns:1fr}}
+  .card{border:1.5px solid var(--line);border-radius:13px;padding:26px;background:#fff;transition:.15s}
+  .card:hover{border-color:var(--blue);box-shadow:0 8px 26px rgba(11,37,69,.09);transform:translateY(-2px)}
+  .card .ico{width:46px;height:46px;border-radius:11px;background:var(--blue-lt);display:grid;place-items:center;margin-bottom:15px}
+  .card h3{font-size:18.5px;margin-bottom:7px;letter-spacing:-.01em}
+  .card p{color:var(--mut);font-size:15px}
+  .card ul{list-style:none;margin-top:12px;font-size:14.5px;color:var(--mut)}
+  .card li{padding-left:20px;position:relative;margin-bottom:5px}
+  .card li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+
+  .band{background:var(--blue-lt)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat .n{font-size:36px;font-weight:800;color:var(--navy);letter-spacing:-.03em}
+  .stat .l{font-size:14px;color:var(--mut);font-weight:600}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:30px}}
+  .arealist{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:15.5px;color:var(--mut);font-weight:600;margin-top:16px}
+  .arealist div{padding-left:20px;position:relative}
+  .arealist div::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--warm)}
+  .maprect{aspect-ratio:4/3;border-radius:13px;background:
+    repeating-linear-gradient(0deg,rgba(28,109,208,.09) 0 1px,transparent 1px 40px),
+    repeating-linear-gradient(90deg,rgba(28,109,208,.09) 0 1px,transparent 1px 40px),
+    linear-gradient(140deg,#eef4fb,#dbe8f7);
+    border:1.5px solid var(--line);display:grid;place-items:center;position:relative}
+  .pin{width:22px;height:22px;border-radius:50% 50% 50% 0;background:var(--warm);transform:rotate(-45deg);box-shadow:0 4px 14px rgba(255,138,31,.5)}
+  .pin::after{content:"";position:absolute;inset:6px;border-radius:50%;background:#fff}
+
+  .hours{border:1.5px solid var(--line);border-radius:13px;overflow:hidden}
+  .hours .row{display:flex;justify-content:space-between;padding:12px 18px;font-size:15px;border-bottom:1px solid var(--line)}
+  .hours .row:last-child{border-bottom:0}
+  .hours .row.em{background:#fff5eb;font-weight:800;color:#8a4405}
+  .hours .row span:first-child{font-weight:600}
+
+  .revwrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.revwrap{grid-template-columns:1fr}}
+  .rev{border:1.5px solid var(--line);border-radius:13px;padding:22px;background:#fff}
+  .rev .stars{color:#f5a623;font-size:17px;letter-spacing:2px}
+  .rev p{font-size:15px;color:var(--mut);margin:10px 0 14px;font-style:italic}
+  .rev .who{font-size:14px;font-weight:700}
+  .rev .who small{display:block;font-weight:500;color:var(--mut);font-style:normal}
+  .revnote{text-align:center;font-size:13.5px;color:var(--mut);margin-top:20px;background:#fffbf2;border:1px dashed #e8c99a;border-radius:9px;padding:12px 16px}
+
+  .finalcta{background:linear-gradient(150deg,var(--navy),var(--blue));color:#fff;text-align:center}
+  .finalcta h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.02em;font-weight:800}
+  .finalcta p{color:#c6d8ef;font-size:18px;margin:12px auto 26px;max-width:52ch}
+
+  footer{background:#081a31;color:#8fa8c4;padding:44px 0 30px;font-size:14.5px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+  @media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:22px}}
+  footer h4{color:#fff;font-size:15px;margin-bottom:11px}
+  footer a{text-decoration:none;display:block;margin-bottom:6px}
+  footer a:hover{color:#fff}
+  .fbot{border-top:1px solid #16304f;margin-top:30px;padding-top:18px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  .stickycall{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--warm);color:#1a1005;text-align:center;padding:14px;font-weight:800;font-size:17px;text-decoration:none;display:none;box-shadow:0 -3px 16px rgba(0,0,0,.18)}
+  @media(max-width:820px){.stickycall{display:block}body{padding-bottom:56px}}
+</style>
+</head>
+<body>
+
+<div class="demobar">This is a <b>DEMO SITE</b> built by TradeSites Co. &mdash; Vance &amp; Sons Plumbing is a fictional business used to show our work.</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="mark">&#9881;</span> Vance &amp; Sons</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#area">Service Area</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#quote">Free Estimate</a>
+    </nav>
+    <a class="callbtn" href="tel:+15550100">&#9742; (555) 010-0199</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">&#9889; 24/7 Emergency Service</span>
+      <h1>Burst pipe at 2am?<br>We answer the phone.</h1>
+      <p>Licensed, insured plumbers serving the metro for 18 years. Upfront pricing before we start &mdash; no surprises on the invoice.</p>
+      <div class="cta-row">
+        <a class="btn btn-p" href="tel:+15550100">&#9742; Call (555) 010-0199</a>
+        <a class="btn btn-s" href="#quote">Get a Free Estimate</a>
+      </div>
+      <div class="trustrow">
+        <span><i class="tick">&#10003;</i> Licensed &amp; insured</span>
+        <span><i class="tick">&#10003;</i> Upfront flat pricing</span>
+        <span><i class="tick">&#10003;</i> Same-day appointments</span>
+      </div>
+    </div>
+    <div class="quotecard" id="quote">
+      <h3>Get a free estimate</h3>
+      <p class="sub">Tell us what's going on. We'll call you back within the hour during business hours.</p>
+      <div class="field"><label>Your name</label><input type="text" placeholder="Jane Doe"></div>
+      <div class="field"><label>Phone</label><input type="tel" placeholder="(555) 000-0000"></div>
+      <div class="field"><label>What do you need?</label>
+        <select>
+          <option>Emergency &mdash; water is leaking now</option>
+          <option>Drain clog / backup</option>
+          <option>Water heater</option>
+          <option>Leak detection &amp; repair</option>
+          <option>Repipe / remodel</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label>Details (optional)</label><textarea rows="2" placeholder="Under the kitchen sink, started this morning..."></textarea></div>
+      <button class="submit">Request My Free Estimate</button>
+      <div class="fineprint">No obligation. We never sell your information.</div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">What We Do</div>
+      <h2>Residential &amp; commercial plumbing</h2>
+      <p>Whatever is leaking, clogged, or cold &mdash; we've fixed it a few thousand times.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="ico">&#128167;</div>
+        <h3>Emergency Repairs</h3>
+        <p>Burst pipes, major leaks, sewage backups. We're on call around the clock.</p>
+        <ul><li>Pipe burst &amp; freeze repair</li><li>Main line breaks</li><li>Shutoff valve failures</li></ul>
+      </div>
+      <div class="card">
+        <div class="ico">&#128293;</div>
+        <h3>Water Heaters</h3>
+        <p>Repair, replacement, and tankless conversions. Most units installed same day.</p>
+        <ul><li>Tank &amp; tankless</li><li>Gas and electric</li><li>Manufacturer warranties honored</li></ul>
+      </div>
+      <div class="card">
+        <div class="ico">&#128736;</div>
+        <h3>Drains &amp; Sewer</h3>
+        <p>Camera inspection first, so you know exactly what you're paying to fix.</p>
+        <ul><li>Hydro jetting</li><li>Root removal</li><li>Trenchless line repair</li></ul>
+      </div>
+      <div class="card">
+        <div class="ico">&#128704;</div>
+        <h3>Fixture Install</h3>
+        <p>Sinks, toilets, tubs, disposals &mdash; installed clean and level, the first time.</p>
+      </div>
+      <div class="card">
+        <div class="ico">&#127968;</div>
+        <h3>Repipe &amp; Remodel</h3>
+        <p>Whole-home repipes and full bath/kitchen rough-ins for your remodel.</p>
+      </div>
+      <div class="card">
+        <div class="ico">&#127970;</div>
+        <h3>Commercial</h3>
+        <p>Restaurants, retail, and light industrial. Scheduled maintenance available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stats">
+    <div class="stat"><div class="n">18</div><div class="l">Years in business</div></div>
+    <div class="stat"><div class="n">24/7</div><div class="l">Emergency dispatch</div></div>
+    <div class="stat"><div class="n">&lt;60m</div><div class="l">Average callback</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Licensed &amp; insured</div></div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap split">
+    <div>
+      <div class="kicker" style="font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--blue)">Service Area</div>
+      <h2 style="font-size:32px;letter-spacing:-.02em;margin:9px 0 10px;font-weight:800">We come to you</h2>
+      <p style="color:var(--mut);font-size:17px">No trip charge inside our service area. Outside it? Call anyway &mdash; we'll tell you straight whether we can help.</p>
+      <div class="arealist">
+        <div>Downtown</div><div>Northside</div>
+        <div>Westgate</div><div>Riverbend</div>
+        <div>Oak Hollow</div><div>Fairview</div>
+        <div>Clearwater</div><div>Millbrook</div>
+      </div>
+      <div style="margin-top:26px">
+        <div class="hours">
+          <div class="row"><span>Monday &ndash; Friday</span><span>7:00am &ndash; 6:00pm</span></div>
+          <div class="row"><span>Saturday</span><span>8:00am &ndash; 2:00pm</span></div>
+          <div class="row"><span>Sunday</span><span>Emergency only</span></div>
+          <div class="row em"><span>&#9889; Emergency line</span><span>24 hours, every day</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="maprect"><div class="pin"></div></div>
+  </div>
+</section>
+
+<section id="reviews" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Reviews</div>
+      <h2>What neighbors say</h2>
+    </div>
+    <div class="revwrap">
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Called at 11pm with water coming through the ceiling. Someone actually picked up and was here in 40 minutes."</p><div class="who">Sample Review<small>Placeholder &mdash; demo only</small></div></div>
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Quoted me the price before touching anything, and that's exactly what I paid. First plumber I've had do that."</p><div class="who">Sample Review<small>Placeholder &mdash; demo only</small></div></div>
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"They ran a camera down the line and showed me the video. Turned out to be roots, not a collapse. Saved me thousands."</p><div class="who">Sample Review<small>Placeholder &mdash; demo only</small></div></div>
+    </div>
+    <div class="revnote"><b>Note from TradeSites Co.:</b> these are placeholders on a demo. On your real site this section pulls your actual Google reviews automatically &mdash; we never write reviews for you.</div>
+  </div>
+</section>
+
+<section class="finalcta">
+  <div class="wrap">
+    <h2>Still leaking?</h2>
+    <p>Call now and talk to a real person, or send us the details and we'll call you back.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-p" href="tel:+15550100">&#9742; (555) 010-0199</a>
+      <a class="btn btn-s" href="#quote">Request an Estimate</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:10px"><span class="mark">&#9881;</span> Vance &amp; Sons</div>
+        <p>Licensed, bonded and insured plumbing contractor.<br>License #PL-000000 (demo)</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+15550100">(555) 010-0199</a>
+        <a href="#">hello@example-demo.com</a>
+        <a href="#">1200 Main St, Suite 4</a>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <a href="#">Mon&ndash;Fri 7am&ndash;6pm</a>
+        <a href="#">Sat 8am&ndash;2pm</a>
+        <a href="#">24/7 emergency line</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>&copy; 2026 Vance &amp; Sons Plumbing (fictional demo business)</span>
+      <span>Site built by <b style="color:#fff">TradeSites Co.</b></span>
+    </div>
+  </div>
+</footer>
+
+<a class="stickycall" href="tel:+15550100">&#9742; Tap to Call &mdash; (555) 010-0199</a>
+
+</body>
+</html>

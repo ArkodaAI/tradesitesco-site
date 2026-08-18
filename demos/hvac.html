@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Northwind Heating &amp; Air — Demo Site by TradeSites Co.</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#1a1d21;--char:#22272e;--red:#d93025;--red-d:#a81f16;--cool:#1e88c7;--mut:#61707f;--line:#e2e7ec;--soft:#f6f8fa}
+  html{scroll-behavior:smooth}
+  body{font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .demobar{background:#111;color:#fff;text-align:center;font-size:13px;padding:8px 14px}
+  .demobar b{color:#ffb020}
+
+  .promo{background:linear-gradient(90deg,var(--red),#e8563f);color:#fff;text-align:center;font-size:14.5px;font-weight:700;padding:10px 14px}
+  .promo b{background:rgba(0,0,0,.2);padding:2px 9px;border-radius:5px;margin-right:6px}
+
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:20px;height:72px}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+  .logo .mark{width:36px;height:36px;border-radius:50%;background:conic-gradient(from 210deg,var(--cool),var(--red),var(--cool));display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900}
+  .logo small{display:block;font-size:11px;font-weight:600;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+  .nav nav{margin-left:auto;display:flex;gap:24px;font-size:15px;font-weight:600;color:var(--mut)}
+  .nav nav a{text-decoration:none}.nav nav a:hover{color:var(--red)}
+  .callbtn{background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:12px 20px;border-radius:7px;font-size:15px;white-space:nowrap;box-shadow:0 3px 0 var(--red-d)}
+  @media(max-width:880px){.nav nav{display:none}.callbtn{margin-left:auto}}
+  @media(max-width:400px){.logo{font-size:16.5px}.logo .mark{width:30px;height:30px;font-size:15px}.callbtn{padding:9px 12px;font-size:13.5px}.nav{height:62px;gap:8px}.wrap{padding:0 13px}}
+
+  .hero{position:relative;background:linear-gradient(100deg,rgba(34,39,46,.95) 0%,rgba(34,39,46,.86) 45%,rgba(34,39,46,.55) 100%),url('../img/hvac-hero.jpg') center/cover no-repeat,var(--char);color:#fff;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(circle at 78% 30%,rgba(217,48,37,.42),transparent 52%),
+    radial-gradient(circle at 20% 82%,rgba(30,136,199,.4),transparent 55%)}
+  .hero .wrap{position:relative;z-index:2;padding:76px 20px 70px;max-width:840px}
+  .badge{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  h1{font-size:clamp(32px,5.4vw,54px);line-height:1.07;letter-spacing:-.03em;margin:20px 0 16px;font-weight:800}
+  .hero p{font-size:18.5px;color:#c3ccd6;max-width:52ch}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-block;text-decoration:none;font-weight:800;padding:16px 28px;border-radius:8px;font-size:17px}
+  .btn-p{background:var(--red);color:#fff;box-shadow:0 4px 0 var(--red-d)}
+  .btn-s{background:#fff;color:var(--ink)}
+  .hero .pts{display:flex;flex-wrap:wrap;gap:9px 28px;margin-top:32px;font-size:14.5px;color:#a9b6c4;font-weight:600}
+  .hero .pts span::before{content:"\2714";color:#4caf50;margin-right:8px;font-weight:900}
+
+  .strip{background:var(--soft);border-bottom:1px solid var(--line)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px 20px;text-align:center}
+  @media(max-width:780px){.strip .wrap{grid-template-columns:repeat(2,1fr)}}
+  .strip .i{font-size:22px;margin-bottom:5px}
+  .strip .t{font-weight:800;font-size:15.5px}
+  .strip .d{font-size:13.5px;color:var(--mut)}
+
+  section{padding:70px 0}
+  .sec-head{max-width:660px;margin:0 auto 44px;text-align:center}
+  .kicker{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+  .sec-head h2{font-size:clamp(27px,3.7vw,37px);letter-spacing:-.025em;margin:9px 0 12px;font-weight:800}
+  .sec-head p{color:var(--mut);font-size:17px}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:820px){.duo{grid-template-columns:1fr}}
+  .bigcard{border-radius:15px;padding:34px;color:#fff;position:relative;overflow:hidden}
+  .bigcard.cool{background:linear-gradient(150deg,#1e88c7,#0f5c8e)}
+  .bigcard.heat{background:linear-gradient(150deg,#d93025,#8d1a12)}
+  .bigcard h3{font-size:25px;letter-spacing:-.02em;margin-bottom:9px}
+  .bigcard p{opacity:.92;font-size:16px}
+  .bigcard ul{list-style:none;margin-top:18px;font-size:15.5px}
+  .bigcard li{padding-left:24px;position:relative;margin-bottom:8px}
+  .bigcard li::before{content:"\2713";position:absolute;left:0;font-weight:900;opacity:.85}
+  .bigcard .glyph{position:absolute;right:-10px;bottom:-24px;font-size:130px;opacity:.13;line-height:1}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.grid3{grid-template-columns:1fr}}
+  .card{border:1.5px solid var(--line);border-radius:12px;padding:26px;transition:.15s;background:#fff}
+  .card:hover{border-color:var(--red);box-shadow:0 8px 24px rgba(26,29,33,.08);transform:translateY(-2px)}
+  .card h3{font-size:18.5px;margin-bottom:7px}
+  .card p{color:var(--mut);font-size:15px}
+  .card .ico{font-size:26px;margin-bottom:12px}
+
+  .planbox{background:var(--char);color:#fff;border-radius:16px;padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  @media(max-width:860px){.planbox{grid-template-columns:1fr;padding:32px}}
+  .planbox h2{font-size:31px;letter-spacing:-.025em;margin-bottom:12px}
+  .planbox p{color:#c3ccd6;font-size:16.5px}
+  .planbox ul{list-style:none;margin-top:18px;color:#dfe5eb;font-size:15.5px}
+  .planbox li{padding-left:26px;position:relative;margin-bottom:9px}
+  .planbox li::before{content:"\2714";position:absolute;left:0;color:#4caf50;font-weight:900}
+  .pricetag{background:#fff;color:var(--ink);border-radius:13px;padding:30px;text-align:center}
+  .pricetag .amt{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1}
+  .pricetag .per{color:var(--mut);font-size:15px;margin-bottom:18px}
+  .pricetag .note{font-size:13px;color:var(--mut);margin-top:12px}
+
+  .qform{background:var(--soft);border:1.5px solid var(--line);border-radius:15px;padding:34px;max-width:640px;margin:0 auto}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  @media(max-width:600px){.frow{grid-template-columns:1fr}}
+  .field{margin-bottom:13px}
+  .field label{display:block;font-size:12.5px;font-weight:800;color:var(--mut);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+  .field input,.field select,.field textarea{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:8px;font:inherit;font-size:15px;background:#fff}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+  .submit{width:100%;background:var(--red);color:#fff;border:0;padding:15px;border-radius:8px;font:inherit;font-weight:800;font-size:16.5px;cursor:pointer;box-shadow:0 4px 0 var(--red-d)}
+
+  .revwrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.revwrap{grid-template-columns:1fr}}
+  .rev{border:1.5px solid var(--line);border-radius:12px;padding:22px}
+  .rev .stars{color:#f5a623;letter-spacing:2px;font-size:17px}
+  .rev p{font-size:15px;color:var(--mut);font-style:italic;margin:10px 0 13px}
+  .rev .who{font-size:14px;font-weight:700}
+  .rev .who small{display:block;font-weight:500;color:var(--mut);font-style:normal}
+  .revnote{text-align:center;font-size:13.5px;color:var(--mut);margin-top:20px;background:#fffbf2;border:1px dashed #e8c99a;border-radius:9px;padding:12px 16px}
+
+  footer{background:var(--char);color:#93a1b0;padding:46px 0 28px;font-size:14.5px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+  @media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+  footer h4{color:#fff;font-size:15px;margin-bottom:11px}
+  footer a{text-decoration:none;display:block;margin-bottom:6px}
+  .fbot{border-top:1px solid #364150;margin-top:30px;padding-top:18px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  .stickycall{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--red);color:#fff;text-align:center;padding:15px;font-weight:800;font-size:17px;text-decoration:none;display:none}
+  @media(max-width:880px){.stickycall{display:block}body{padding-bottom:56px}}
+</style>
+</head>
+<body>
+
+<div class="demobar">This is a <b>DEMO SITE</b> built by TradeSites Co. &mdash; Northwind Heating &amp; Air is a fictional business used to show our work.</div>
+<div class="promo"><b>SPRING</b> Tune-up special &mdash; $89 A/C inspection, booked online in 30 seconds</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="mark">N</span><span>Northwind<small>Heating &amp; Air</small></span></div>
+    <nav><a href="#services">Services</a><a href="#plan">Maintenance Plan</a><a href="#reviews">Reviews</a><a href="#book">Book Online</a></nav>
+    <a class="callbtn" href="tel:+15550177">&#9742; (555) 010-0177</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="badge">Same-day service &bull; 7 days a week</span>
+    <h1>Heat out? Air out?<br>We'll be there today.</h1>
+    <p>Factory-trained techs, flat-rate pricing you approve before we start, and a written warranty on every repair. Serving the metro since 2004.</p>
+    <div class="cta-row">
+      <a class="btn btn-p" href="tel:+15550177">&#9742; Call (555) 010-0177</a>
+      <a class="btn btn-s" href="#book">Book Online &rarr;</a>
+    </div>
+    <div class="pts"><span>No overtime charges</span><span>Financing available</span><span>Free second opinions</span></div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div><div class="i">&#9200;</div><div class="t">Same-Day</div><div class="d">Most repairs, 7 days a week</div></div>
+    <div><div class="i">&#128176;</div><div class="t">Flat Rate</div><div class="d">You approve before we start</div></div>
+    <div><div class="i">&#128737;</div><div class="t">Warrantied</div><div class="d">In writing, every repair</div></div>
+    <div><div class="i">&#128100;</div><div class="t">Real Humans</div><div class="d">A person answers the phone</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Services</div>
+      <h2>Heating and cooling, done right</h2>
+      <p>Repair it, maintain it, or replace it &mdash; and we'll tell you honestly which one you actually need.</p>
+    </div>
+    <div class="duo" style="margin-bottom:22px">
+      <div class="bigcard cool">
+        <span class="glyph">&#10052;</span>
+        <h3>Cooling</h3>
+        <p>Central A/C, heat pumps, mini-splits, and ductwork.</p>
+        <ul><li>A/C repair &amp; replacement</li><li>Heat pump service</li><li>Ductless mini-split install</li><li>Refrigerant leak detection</li></ul>
+      </div>
+      <div class="bigcard heat">
+        <span class="glyph">&#128293;</span>
+        <h3>Heating</h3>
+        <p>Furnaces, boilers, and everything that keeps the winter outside.</p>
+        <ul><li>Furnace repair &amp; install</li><li>Boiler service</li><li>Heat exchanger inspection</li><li>Thermostat upgrades</li></ul>
+      </div>
+    </div>
+    <div class="grid3">
+      <div class="card"><div class="ico">&#127788;</div><h3>Indoor Air Quality</h3><p>Whole-home filtration, humidifiers, and UV purification for allergy season.</p></div>
+      <div class="card"><div class="ico">&#128295;</div><h3>Duct Cleaning &amp; Sealing</h3><p>Leaky ducts can waste a quarter of what you pay to heat and cool.</p></div>
+      <div class="card"><div class="ico">&#127970;</div><h3>Light Commercial</h3><p>Rooftop units, split systems, and scheduled maintenance contracts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="planbox">
+      <div>
+        <div class="kicker" style="color:#ff8f85">Northwind Comfort Club</div>
+        <h2>Two tune-ups a year, and you go to the front of the line.</h2>
+        <p>The cheapest repair is the one that never happens. Members get priority scheduling in the middle of a heat wave &mdash; when everyone else is waiting three days.</p>
+        <ul>
+          <li>Spring A/C + fall furnace tune-up</li>
+          <li>Priority scheduling, no overtime fees</li>
+          <li>15% off any repair</li>
+          <li>Free second opinion on any quote</li>
+        </ul>
+      </div>
+      <div class="pricetag">
+        <div class="amt">$16</div>
+        <div class="per">per month, cancel anytime</div>
+        <a class="btn btn-p" href="#book" style="display:block">Join the Club</a>
+        <div class="note">Members save an average of two service calls a year.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Book Online</div>
+      <h2>Pick a time. We'll confirm by text.</h2>
+      <p>Takes about thirty seconds. No phone tag.</p>
+    </div>
+    <div class="qform">
+      <div class="frow">
+        <div class="field"><label>Name</label><input type="text" placeholder="Jane Doe"></div>
+        <div class="field"><label>Phone</label><input type="tel" placeholder="(555) 000-0000"></div>
+      </div>
+      <div class="field"><label>Address</label><input type="text" placeholder="1200 Main St"></div>
+      <div class="frow">
+        <div class="field"><label>What's going on?</label>
+          <select><option>A/C not cooling</option><option>Furnace not heating</option><option>Strange noise or smell</option><option>Tune-up / maintenance</option><option>Quote on a new system</option></select>
+        </div>
+        <div class="field"><label>Preferred time</label>
+          <select><option>Today &mdash; as soon as possible</option><option>Tomorrow morning</option><option>Tomorrow afternoon</option><option>This week, flexible</option></select>
+        </div>
+      </div>
+      <div class="field"><label>Anything else? (optional)</label><textarea rows="2" placeholder="Unit is on the roof, gate code is 1234..."></textarea></div>
+      <button class="submit">Request My Appointment</button>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">Reviews</div><h2>From our neighbors</h2></div>
+    <div class="revwrap">
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Another company told me I needed a whole new system. Northwind found a bad capacitor. Ninety bucks."</p><div class="who">Sample Review<small>Placeholder &mdash; demo only</small></div></div>
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Booked online at 7am, tech was here by 11 and texted me before he showed up. That's it. That's the review."</p><div class="who">Sample Review<small>Placeholder &mdash; demo only</small></div></div>
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Ninety-eight degrees, we're on the club plan, and they got us in the same afternoon. Worth every penny."</p><div class="who">Sample Review<small>Placeholder &mdash; demo only</small></div></div>
+    </div>
+    <div class="revnote"><b>Note from TradeSites Co.:</b> these are placeholders on a demo. On your real site this section pulls your actual Google reviews automatically &mdash; we never write reviews for you.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:10px"><span class="mark">N</span><span>Northwind<small style="color:#93a1b0">Heating &amp; Air</small></span></div>
+        <p>Licensed HVAC contractor. License #HV-000000 (demo).<br>Serving the metro since 2004.</p>
+      </div>
+      <div><h4>Contact</h4><a href="tel:+15550177">(555) 010-0177</a><a href="#">service@example-demo.com</a><a href="#">Book online 24/7</a></div>
+      <div><h4>Hours</h4><a href="#">Mon&ndash;Sat 7am&ndash;7pm</a><a href="#">Sunday by appointment</a><a href="#">Emergency service available</a></div>
+    </div>
+    <div class="fbot"><span>&copy; 2026 Northwind Heating &amp; Air (fictional demo business)</span><span>Site built by <b style="color:#fff">TradeSites Co.</b></span></div>
+  </div>
+</footer>
+
+<a class="stickycall" href="tel:+15550177">&#9742; Tap to Call &mdash; (555) 010-0177</a>
+
+</body>
+</html>

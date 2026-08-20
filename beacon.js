@@ -18,9 +18,32 @@
  */
 (function () {
   try {
+    // THE CAMPAIGN TAG, and why the referrer alone was never going to work.
+    //
+    // The first real question asked of this data was "did my Facebook post
+    // bring anyone?" and it could not be answered -- not because nobody came,
+    // but because Facebook's in-app browser strips the referrer. Traffic from
+    // a phone app arrives looking exactly like somebody typing the address
+    // from memory. So "0 from facebook.com" is not evidence of nothing; it is
+    // the measurement failing silently, which is worse than no measurement,
+    // because it reads as an answer.
+    //
+    // A tag we put in the link ourselves survives all of that. Post
+    // /?s=fb-marketplace and the visit is attributable no matter what the
+    // browser does or does not send.
+    //
+    // Still nothing personal: it is a word WE chose, attached to a link WE
+    // published. It says which poster worked, never who the reader is.
+    var tag = "";
+    try {
+      var m = (location.search || "").match(/[?&]s=([A-Za-z0-9_-]{1,40})/);
+      if (m) { tag = m[1]; }
+    } catch (e2) { tag = ""; }
+
     var payload = JSON.stringify({
       p: location.pathname || "/",
       r: document.referrer || "",
+      s: tag,
       w: window.screen ? window.screen.width : 0
     });
     var url = "https://logic.arkoda.app/webhook/ts-hit";

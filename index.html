@@ -475,7 +475,7 @@
       <div class="incgrid">
         <div class="inc"><span class="ic">&#128241;</span><div><h4>Built for phones first</h4><p>Most of your customers are standing in a flooded basement holding a phone. That's the screen we design for.</p></div></div>
         <div class="inc"><span class="ic">&#9742;</span><div><h4>Tap-to-call everywhere</h4><p>A call button that follows them down the page. It is the single biggest thing most trade sites are missing.</p></div></div>
-        <div class="inc"><span class="ic">&#128221;</span><div><h4>Quote request form</h4><p>Goes straight to your email and your phone. No portal to log into.</p></div></div>
+        <div class="inc"><span class="ic">&#128221;</span><div><h4>Quote request form</h4><p>Lands in your email the second they hit send &mdash; on your phone, wherever you are. No portal to log into.</p></div></div>
         <div class="inc"><span class="ic">&#9733;</span><div><h4>Your Google reviews, live</h4><p>Pulled automatically from your real listing. New review shows up on your site by itself.</p></div></div>
         <div class="inc"><span class="ic">&#128269;</span><div><h4>Google setup done right</h4><p>Titles, descriptions, local business markup and sitemap &mdash; submitted for you, not left as homework.</p></div></div>
         <div class="inc"><span class="ic">&#129302;</span><div><h4>Readable by AI assistants</h4><p>Structured data, an llms.txt file and an AI-friendly robots.txt, so ChatGPT, Gemini, Perplexity and Claude can actually find and cite you.</p></div></div>
@@ -532,7 +532,7 @@
         <ul>
           <li>Answers your most common questions instantly, 24/7</li>
           <li>Captures the lead when you're on a job or asleep</li>
-          <li>Texts and emails you the moment someone leaves details</li>
+          <li>Emails you the moment someone leaves details</li>
           <li>Works on every page, on any phone</li>
         </ul>
         <div class="honest">
@@ -795,6 +795,7 @@
       <legend>How we reach you</legend>
       <label>Your name<input type="text" name="contact_name" required autocomplete="name"></label>
       <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Your web address <span class="fine">if you already own one &mdash; leave blank if you don't</span><input type="text" name="domain" placeholder="aceplumbing.com" autocomplete="url"></label>
     </fieldset>
     <fieldset>
       <legend>The six questions <span class="fine">about 10 minutes</span></legend>
@@ -829,7 +830,7 @@
     b.disabled=true;b.textContent="Sending...";
     var d={addons:[],care_plan:f.care_plan.checked?1:0};
     f.querySelectorAll('input[name="addon"]:checked').forEach(function(x){d.addons.push(x.value);});
-    ["contact_name","email","biz_name","trade","area","phone","hours","anything"].forEach(function(k){if(f[k])d[k]=f[k].value;});
+    ["contact_name","email","domain","biz_name","trade","area","phone","hours","anything"].forEach(function(k){if(f[k])d[k]=f[k].value;});
     fetch(f.action,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)})
       .then(function(r){if(!r.ok)throw new Error(r.status);
         f.hidden=true;document.getElementById("intakeThanks").hidden=false;
